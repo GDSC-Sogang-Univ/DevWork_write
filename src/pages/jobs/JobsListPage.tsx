@@ -1,5 +1,5 @@
 import { AppScreen, cssVars } from "@stackflow/plugin-basic-ui";
-import AsyncBoundary from "../../components/AsyncBoundary";
+import AsyncBoundary from "@/components/AsyncBoundary";
 import { styled } from "@linaria/react";
 import FeedCard from "./components/FeedCard";
 import {
@@ -11,9 +11,9 @@ import {
   Flex1,
   OverflowScroll,
   FlexJustifyCenter,
-} from "../../styles/f";
-import { useJobArticles } from "../../api/hooks/useGetJobArticles";
-import { useFlow } from "../../lib/stackflow";
+} from "@/styles/f";
+import { useJobArticles } from "@/api/hooks/useGetJobArticles";
+import { useFlow } from "@/lib/stackflow";
 
 export const JobsListPage = () => {
   const { push } = useFlow();
@@ -23,12 +23,9 @@ export const JobsListPage = () => {
       <AppScreen
         appBar={{
           title: "Jobs",
-        }}
-      >
+        }}>
         <JobsList />
-        <FloatingButton onClick={() => push("JobCreatePage", {})}>
-          + 매물 등록
-        </FloatingButton>
+        <FloatingButton onClick={() => push("JobCreatePage", {})}>+ 매물 등록</FloatingButton>
       </AppScreen>
     </AsyncBoundary>
   );

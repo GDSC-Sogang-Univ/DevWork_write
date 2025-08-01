@@ -2,9 +2,9 @@ import { AppScreen } from "@stackflow/plugin-basic-ui";
 import { styled } from "@linaria/react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { jobFormSchema, JobFormData, categoryOptions, regionOptions } from "../../schemas/jobForm";
-import { useFlow } from "../../lib/stackflow";
-import { FlexColumn, Flex1 } from "../../styles/f";
+import { jobFormSchema, JobFormData, categoryOptions, regionOptions } from "@/schemas/jobForm";
+import { useFlow } from "@/lib/stackflow";
+import { FlexColumn, Flex1 } from "@/styles/f";
 import { useState } from "react";
 
 export const JobCreatePage = () => {
@@ -51,8 +51,7 @@ export const JobCreatePage = () => {
         backButton: {
           onClick: () => pop(),
         },
-      }}
-    >
+      }}>
       <FormWrapper>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <FormGroup>

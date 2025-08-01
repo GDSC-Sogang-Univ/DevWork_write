@@ -1,18 +1,17 @@
 import { useQuery, UseQueryOptions } from "@tanstack/react-query";
 import { fetchInstance } from "../instance";
 import { AxiosResponse } from "axios";
-import { JobArticle } from "../../types/api";
-import { useApiError } from "../../hooks/useApiError";
+import { JobArticle } from "@/types/api";
+import { useApiError } from "@/hooks/useApiError";
 
 export const JOB_ARTICLES_URL = "group-job-articles";
 
 export type JobArticlesResponse = JobArticle[];
 
 export const getJobArticles = async (): Promise<JobArticlesResponse> => {
-  const { data } = await fetchInstance().get<
-    undefined,
-    AxiosResponse<JobArticlesResponse>
-  >(JOB_ARTICLES_URL);
+  const { data } = await fetchInstance().get<undefined, AxiosResponse<JobArticlesResponse>>(
+    JOB_ARTICLES_URL
+  );
 
   return data;
 };
@@ -36,12 +35,12 @@ export const useJobArticles = (options?: UseJobArticlesOptions) => {
   // 에러 처리
   useApiError(error, options?.onError as any);
 
-  return { 
-    data: data ?? [], 
-    isPending, 
-    error, 
+  return {
+    data: data ?? [],
+    isPending,
+    error,
     isFetching,
     refetch,
-    isEmpty: !isPending && (!data || data.length === 0)
+    isEmpty: !isPending && (!data || data.length === 0),
   };
 };

@@ -1,12 +1,5 @@
-import {
-  HttpResponse as mswHttpResponse,
-  http as mswHttp,
-  HttpHandler,
-} from "msw";
-import {
-  JOB_ARTICLES_URL,
-  JobArticlesResponse,
-} from "../hooks/useGetJobArticles";
+import { HttpResponse as mswHttpResponse, http as mswHttp, HttpHandler } from "msw";
+import { JOB_ARTICLES_URL, JobArticlesResponse } from "@/api/hooks/useGetJobArticles";
 import { API_ENDPOINT } from "../instance";
 
 export const jobArticlesMockResponse = [
@@ -88,6 +81,4 @@ const jobArticlesGet = (statusCode: number, response: JobArticlesResponse) =>
     return mswHttpResponse.json(response, { status: statusCode });
   });
 
-export const jobArticlesHandlers: HttpHandler[] = [
-  jobArticlesGet(200, jobArticlesMockResponse),
-];
+export const jobArticlesHandlers: HttpHandler[] = [jobArticlesGet(200, jobArticlesMockResponse)];
