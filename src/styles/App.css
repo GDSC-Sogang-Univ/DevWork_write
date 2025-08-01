@@ -1,0 +1,328 @@
+/* All @import statements must come first */
+@import "./reset.css"; /* Our custom reset in @layer base */
+@import "tailwindcss";
+
+/* KarrotSans Font Face Declarations */
+@font-face {
+  font-family: "KarrotSans";
+  src: url("../assets/KarrotSans-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "KarrotSans";
+  src: url("../assets/KarrotSans-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "KarrotSans";
+  src: url("../assets/KarrotSans-Heavy.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Global Font Application */
+:root {
+  font-family:
+    "Pretendard",
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    Roboto,
+    "Helvetica Neue",
+    "Segoe UI",
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    "Malgun Gothic",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    sans-serif;
+}
+
+body {
+  font-family:
+    "Pretendard",
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    Roboto,
+    "Helvetica Neue",
+    "Segoe UI",
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    "Malgun Gothic",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    sans-serif;
+}
+
+/* Tailwind CSS v4 Font Family Extension */
+@layer base {
+  :root {
+    --font-sans:
+      "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+      "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
+      "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      sans-serif;
+  }
+}
+
+/* Custom Font Family Classes */
+@layer utilities {
+  .font-karrot {
+    font-family:
+      "KarrotSans",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Helvetica Neue",
+      sans-serif;
+  }
+
+  .font-system {
+    font-family:
+      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+      Cantarell, "Helvetica Neue", sans-serif;
+  }
+
+  .font-pretendard {
+    font-family:
+      "Pretendard Variable",
+      -apple-system,
+      BlinkMacSystemFont,
+      system-ui,
+      Roboto,
+      "Helvetica Neue",
+      "Segoe UI",
+      "Apple SD Gothic Neo",
+      "Noto Sans KR",
+      "Malgun Gothic",
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol",
+      sans-serif;
+  }
+}
+
+/* Design Tokens - Sogang Brand Colors */
+@layer base {
+  :root {
+    /* Sogang Brand Primary Colors */
+    --color-sogang-50: #fef2f1;
+    --color-sogang-100: #fde6e4;
+    --color-sogang-200: #fbcfc9;
+    --color-sogang-300: #f7a9a1;
+    --color-sogang-400: #f17a6c;
+    --color-sogang-500: #e84336;
+    --color-sogang-600: #d4271a;
+    --color-sogang-700: #b11f15;
+    --color-sogang-800: #921d14;
+    --color-sogang-900: #791e16;
+    --color-sogang-950: #420b08;
+
+    /* Additional Sogang Colors */
+    --color-sogang-blue-light: #4a90e2;
+    --color-sogang-blue: #1e3a8a;
+    --color-sogang-gray: #6b7280;
+    --color-sogang-gray-light: #f3f4f6;
+  }
+}
+
+/* Sogang Color Utilities */
+@layer utilities {
+  /* Text Colors */
+  .text-sogang-50 {
+    color: var(--color-sogang-50);
+  }
+  .text-sogang-100 {
+    color: var(--color-sogang-100);
+  }
+  .text-sogang-200 {
+    color: var(--color-sogang-200);
+  }
+  .text-sogang-300 {
+    color: var(--color-sogang-300);
+  }
+  .text-sogang-400 {
+    color: var(--color-sogang-400);
+  }
+  .text-sogang-500 {
+    color: var(--color-sogang-500);
+  }
+  .text-sogang-600 {
+    color: var(--color-sogang-600);
+  }
+  .text-sogang-700 {
+    color: var(--color-sogang-700);
+  }
+  .text-sogang-800 {
+    color: var(--color-sogang-800);
+  }
+  .text-sogang-900 {
+    color: var(--color-sogang-900);
+  }
+  .text-sogang-950 {
+    color: var(--color-sogang-950);
+  }
+  .text-sogang-blue-light {
+    color: var(--color-sogang-blue-light);
+  }
+  .text-sogang-blue {
+    color: var(--color-sogang-blue);
+  }
+  .text-sogang-gray {
+    color: var(--color-sogang-gray);
+  }
+  .text-sogang-gray-light {
+    color: var(--color-sogang-gray-light);
+  }
+
+  /* Background Colors */
+  .bg-sogang-50 {
+    background-color: var(--color-sogang-50);
+  }
+  .bg-sogang-100 {
+    background-color: var(--color-sogang-100);
+  }
+  .bg-sogang-200 {
+    background-color: var(--color-sogang-200);
+  }
+  .bg-sogang-300 {
+    background-color: var(--color-sogang-300);
+  }
+  .bg-sogang-400 {
+    background-color: var(--color-sogang-400);
+  }
+  .bg-sogang-500 {
+    background-color: var(--color-sogang-500);
+  }
+  .bg-sogang-600 {
+    background-color: var(--color-sogang-600);
+  }
+  .bg-sogang-700 {
+    background-color: var(--color-sogang-700);
+  }
+  .bg-sogang-800 {
+    background-color: var(--color-sogang-800);
+  }
+  .bg-sogang-900 {
+    background-color: var(--color-sogang-900);
+  }
+  .bg-sogang-950 {
+    background-color: var(--color-sogang-950);
+  }
+  .bg-sogang-blue-light {
+    background-color: var(--color-sogang-blue-light);
+  }
+  .bg-sogang-blue {
+    background-color: var(--color-sogang-blue);
+  }
+  .bg-sogang-gray {
+    background-color: var(--color-sogang-gray);
+  }
+  .bg-sogang-gray-light {
+    background-color: var(--color-sogang-gray-light);
+  }
+
+  /* Border Colors */
+  .border-sogang-50 {
+    border-color: var(--color-sogang-50);
+  }
+  .border-sogang-100 {
+    border-color: var(--color-sogang-100);
+  }
+  .border-sogang-200 {
+    border-color: var(--color-sogang-200);
+  }
+  .border-sogang-300 {
+    border-color: var(--color-sogang-300);
+  }
+  .border-sogang-400 {
+    border-color: var(--color-sogang-400);
+  }
+  .border-sogang-500 {
+    border-color: var(--color-sogang-500);
+  }
+  .border-sogang-600 {
+    border-color: var(--color-sogang-600);
+  }
+  .border-sogang-700 {
+    border-color: var(--color-sogang-700);
+  }
+  .border-sogang-800 {
+    border-color: var(--color-sogang-800);
+  }
+  .border-sogang-900 {
+    border-color: var(--color-sogang-900);
+  }
+  .border-sogang-950 {
+    border-color: var(--color-sogang-950);
+  }
+  .border-sogang-blue-light {
+    border-color: var(--color-sogang-blue-light);
+  }
+  .border-sogang-blue {
+    border-color: var(--color-sogang-blue);
+  }
+  .border-sogang-gray {
+    border-color: var(--color-sogang-gray);
+  }
+  .border-sogang-gray-light {
+    border-color: var(--color-sogang-gray-light);
+  }
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
