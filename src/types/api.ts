@@ -23,6 +23,7 @@ export interface ApiErrorResponse {
 export interface PaginationParams {
   page?: number;
   limit?: number;
+  cursor?: string;
 }
 
 export interface PaginationMeta {
