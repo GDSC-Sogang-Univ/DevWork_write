@@ -14,6 +14,7 @@ export type ArticleStatus = "active" | "reserved" | "sold";
 
 // 게시글 기본 정보
 export interface Article extends BaseEntity {
+  id: string;
   title: string;
   price: number;
   location: string;
