@@ -5,16 +5,16 @@ import { useArticles } from "@/hooks/useArticles";
 import { IconFaceSurprisedCircleLine } from "@karrotmarket/react-monochrome-icon";
 import { ProgressCircle } from "seed-design/ui/progress-circle";
 import PromotionalBanner from "@/components/PromotionalBanner";
-import ProductFilter from "@/components/ProductFilter";
-import { useProductFilter } from "@/hooks/useProductFilter";
+import ProductRegisterButton from "./components/ProductRegister";
+import { useFlow } from "@stackflow/react/future";
 
 const Main = () => {
   const { data: articles, isLoading } = useArticles();
+  const { push } = useFlow();
 
-  const { selectedFilter, setSelectedFilter, filterOptions, filteredArticles } =
-    useProductFilter({
-      articles: articles?.items || [],
-    });
+  const handleProductRegisterClick = () => {
+    push("form", {});
+  };
 
   return (
     <AppScreen>
@@ -23,31 +23,20 @@ const Main = () => {
         <PromotionalBanner />
       </div>
 
-      {/* Filter Section */}
-      {articles && (
-        <div className="px-4 py-3 border-b border-gray-100">
-          <ProductFilter
-            options={filterOptions}
-            selectedFilter={selectedFilter}
-            onFilterChange={setSelectedFilter}
-          />
-        </div>
-      )}
+      <ProductRegisterButton onClick={handleProductRegisterClick} />
 
       {isLoading ? (
-        <div className="flex justify-center py-8">
-          <ProgressCircle tone="neutral" size="40" />
-        </div>
+        <ProgressCircle tone="neutral" size="40" />
       ) : articles ? (
         <ProductList
-          articles={filteredArticles}
+          articles={articles.items}
           onClickItem={id => console.log("상품 클릭:", id)}
           onToggleFavorite={id => console.log("찜 토글:", id)}
         />
       ) : (
-        <div className="flex flex-col items-center justify-center py-8 text-gray-500">
-          <IconFaceSurprisedCircleLine size={48} />
-          <p className="mt-2">목록을 얻어오는데 실패했어요..</p>
+        <div>
+          <IconFaceSurprisedCircleLine />
+          목록을 얻어오는데 실패했어요..
         </div>
       )}
     </AppScreen>
