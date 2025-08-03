@@ -1,0 +1,70 @@
+/* Carousel 커스텀 스타일 */
+.carousel-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-swiper .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 네비게이션 버튼 스타일 */
+.carousel-swiper .swiper-button-next,
+.carousel-swiper .swiper-button-prev {
+  color: #b11f15;
+  background: rgba(255, 255, 255, 0.8);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.carousel-swiper .swiper-button-next:hover,
+.carousel-swiper .swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: scale(1.1);
+}
+
+.carousel-swiper .swiper-button-next::after,
+.carousel-swiper .swiper-button-prev::after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* 페이지네이션 스타일 */
+.carousel-swiper .swiper-pagination-bullet {
+  background: rgba(177, 31, 21, 0.5);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.carousel-swiper .swiper-pagination-bullet-active {
+  background: #b11f15;
+  transform: scale(1.2);
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .carousel-swiper .swiper-button-next,
+  .carousel-swiper .swiper-button-prev {
+    width: 32px;
+    height: 32px;
+  }
+
+  .carousel-swiper .swiper-button-next::after,
+  .carousel-swiper .swiper-button-prev::after {
+    font-size: 14px;
+  }
+}
