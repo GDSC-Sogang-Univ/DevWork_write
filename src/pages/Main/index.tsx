@@ -1,9 +1,12 @@
 import { AppScreen } from "@stackflow/plugin-basic-ui";
-import { Header } from "@/components";
+import { Carousel, Header } from "@/components";
 import { ProductList } from "./components/ProductList";
 import { CategoryList } from "./components/CategoryList";
 import { useArticles } from "@/hooks/useArticles";
-import { IconFaceSurprisedCircleLine } from "@karrotmarket/react-monochrome-icon";
+import {
+  IconFaceSurprisedCircleLine,
+  IconPlusLine,
+} from "@karrotmarket/react-monochrome-icon";
 import { ProgressCircle } from "seed-design/ui/progress-circle";
 import { useState, useMemo } from "react";
 import type { Article } from "@/types/article";
@@ -11,6 +14,10 @@ import type { Article } from "@/types/article";
 const Main = () => {
   const { data: articles, isLoading } = useArticles();
   const [selectedCategory, setSelectedCategory] = useState("전체");
+  const { push } = useFlow();
+  const handleRegister = () => {
+    push("form", {});
+  };
 
   // 카테고리별 필터링된 상품 목록
   const filteredArticles = useMemo(() => {
@@ -32,6 +39,7 @@ const Main = () => {
   return (
     <AppScreen>
       <Header route="main" />
+      <Carousel className="mb-6" />
 
       {/* 카테고리 필터 */}
       <CategoryList
@@ -54,6 +62,8 @@ const Main = () => {
           목록을 얻어오는데 실패했어요..
         </div>
       )}
+
+      <FloatingActionButton icon={<IconPlusLine />} onClick={handleRegister} />
     </AppScreen>
   );
 };
