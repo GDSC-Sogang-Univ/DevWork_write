@@ -3,7 +3,6 @@ import {
   IconMagnifyingglassLine,
   IconPersonFill,
 } from "@karrotmarket/react-monochrome-icon";
-import { ActionButton } from "seed-design/ui/action-button";
 import { useFlow } from "@/lib/stackflow";
 import type { RouteName } from "@/routes";
 import { cn } from "@/utils/tailwind-helpers";
@@ -40,13 +39,12 @@ const Header: React.FC<HeaderProps> = ({
   showBackButton,
   showSearch,
   showProfile,
-  showRegisterButton,
   onBack,
   customActions,
   className,
   ...overrides
 }) => {
-  const { push, pop } = useFlow();
+  const { pop } = useFlow();
 
   // Route 기본 설정과 props 병합
   const config = { ...routeConfig[route], ...overrides };
@@ -54,8 +52,6 @@ const Header: React.FC<HeaderProps> = ({
   const finalShowBackButton = showBackButton ?? config.showBackButton ?? false;
   const finalShowSearch = showSearch ?? config.showSearch ?? false;
   const finalShowProfile = showProfile ?? config.showProfile ?? false;
-  const finalShowRegisterButton =
-    showRegisterButton ?? config.showRegisterButton ?? false;
 
   const handleBack = () => {
     if (onBack) {
@@ -63,10 +59,6 @@ const Header: React.FC<HeaderProps> = ({
     } else {
       pop();
     }
-  };
-
-  const handleRegister = () => {
-    push("form", {});
   };
 
   // Main 타입 헤더 (기존 Main 페이지 스타일)
@@ -83,11 +75,7 @@ const Header: React.FC<HeaderProps> = ({
           {finalShowProfile && (
             <IconPersonFill color="#555D6D" width={24} height={24} />
           )}
-          {finalShowRegisterButton && (
-            <ActionButton variant="brandSolid" onClick={handleRegister}>
-              상품등록
-            </ActionButton>
-          )}
+
           {customActions}
         </div>
       </div>
