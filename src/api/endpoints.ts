@@ -21,6 +21,11 @@ export const API_ENDPOINTS = {
     delete: (id: string) => `/api/products/${id}`,
   },
 
+  // Carousel 관련 엔드포인트
+  carousel: {
+    list: "/api/carousel",
+  },
+
   // 카테고리 관련 엔드포인트
   categories: {
     list: "/api/categories",
@@ -50,6 +55,11 @@ export const QUERY_KEYS = {
       [...QUERY_KEYS.products.lists(), params] as const,
     details: () => [...QUERY_KEYS.products.all, "detail"] as const,
     detail: (id: string) => [...QUERY_KEYS.products.details(), id] as const,
+  },
+
+  carousel: {
+    all: ["carousel"] as const,
+    list: () => [...QUERY_KEYS.carousel.all, "list"] as const,
   },
 
   categories: {
