@@ -53,7 +53,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             e.stopPropagation();
             onToggleFavorite?.(id);
           }}
-          className="absolute top-2 right-2 rounded-full bg-white/80 p-1 hover:bg-white"
+          className="absolute top-2 right-2 rounded-full p-1 hover:bg-white"
         >
           <IconHeartLine className="w-5 h-5 text-gray-300" />
         </button>
