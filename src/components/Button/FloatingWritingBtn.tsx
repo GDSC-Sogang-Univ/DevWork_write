@@ -11,7 +11,7 @@ function FloatingWritingBtn() {
   };
 
   return (
-    <FloatingBtn onClickFunc={handleRegister}>
+    <FloatingBtn aria_label="상품 등록" onClickFunc={handleRegister}>
       <Icon svg={<IconPlusLine />} />
     </FloatingBtn>
   );
