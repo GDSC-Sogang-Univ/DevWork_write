@@ -2,12 +2,20 @@ import { AppScreen } from "@stackflow/plugin-basic-ui";
 import { Header } from "@/components";
 import { ProductList } from "./components/ProductList";
 import { useArticles } from "@/hooks/useArticles";
-import { IconFaceSurprisedCircleLine } from "@karrotmarket/react-monochrome-icon";
+import {
+  IconFaceSurprisedCircleLine,
+  IconPlusLine,
+} from "@karrotmarket/react-monochrome-icon";
 import { ProgressCircle } from "seed-design/ui/progress-circle";
+import FloatingActionButton from "@/components/FloatingActionButton";
+import { useFlow } from "@/lib/stackflow";
 
 const Main = () => {
   const { data: articles, isLoading } = useArticles();
-
+  const { push } = useFlow();
+  const handleRegister = () => {
+    push("form", {});
+  };
   return (
     <AppScreen>
       <Header route="main" />
@@ -25,6 +33,8 @@ const Main = () => {
           목록을 얻어오는데 실패했어요..
         </div>
       )}
+
+      <FloatingActionButton icon={<IconPlusLine />} onClick={handleRegister} />
     </AppScreen>
   );
 };
