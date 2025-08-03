@@ -4,6 +4,7 @@ import { ProductList } from "./components/ProductList";
 import { useArticles } from "@/hooks/useArticles";
 import { IconFaceSurprisedCircleLine } from "@karrotmarket/react-monochrome-icon";
 import { ProgressCircle } from "seed-design/ui/progress-circle";
+import AddCarousel from "./components/AdCarousel";
 
 const Main = () => {
   const { data: articles, isLoading } = useArticles();
@@ -11,6 +12,9 @@ const Main = () => {
   return (
     <AppScreen>
       <Header route="main" />
+
+      <AddCarousel />
+
       {isLoading ? (
         <ProgressCircle tone="neutral" size="40" />
       ) : articles ? (
