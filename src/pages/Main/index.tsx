@@ -1,5 +1,5 @@
 import { AppScreen } from "@stackflow/plugin-basic-ui";
-import { Header } from "@/components";
+import { Carousel, Header } from "@/components";
 import { ProductList } from "./components/ProductList";
 import { useArticles } from "@/hooks/useArticles";
 import { IconFaceSurprisedCircleLine } from "@karrotmarket/react-monochrome-icon";
@@ -11,6 +11,7 @@ const Main = () => {
   return (
     <AppScreen>
       <Header route="main" />
+      <Carousel className="mb-6" />
       {isLoading ? (
         <ProgressCircle tone="neutral" size="40" />
       ) : articles ? (

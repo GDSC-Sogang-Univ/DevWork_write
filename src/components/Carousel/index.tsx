@@ -7,8 +7,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-// Import custom styles
-import "./styles.css";
+// Import CarouselCard component
+import CarouselCard from "./CarouselCard";
 
 // Mock 데이터
 const mockCarouselData = [
@@ -81,19 +81,12 @@ export const Carousel: React.FC<CarouselProps> = ({ className }) => {
       >
         {mockCarouselData.map(slide => (
           <SwiperSlide key={slide.id}>
-            <div className="relative w-full h-48 md:h-64 lg:h-80">
-              <img
-                src={slide.imageUrl}
-                alt={slide.title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-30 flex items-end">
-                <div className="p-6 text-white">
-                  <h3 className="text-xl font-bold mb-2">{slide.title}</h3>
-                  <p className="text-sm opacity-90">{slide.description}</p>
-                </div>
-              </div>
-            </div>
+            <CarouselCard
+              id={slide.id}
+              imageUrl={slide.imageUrl}
+              title={slide.title}
+              description={slide.description}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
