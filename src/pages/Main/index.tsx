@@ -10,6 +10,7 @@ import { ProgressCircle } from "seed-design/ui/progress-circle";
 import { useFlow } from "@/lib/stackflow";
 import { Icon } from "@seed-design/react";
 import FloatingBtn from "@/components/FloatingButton";
+import AdCarousel from "./components/ADCarousel";
 
 const Main = () => {
   const { data: articles, isLoading } = useArticles();
@@ -22,6 +23,7 @@ const Main = () => {
   return (
     <AppScreen>
       <Header route="main" />
+      <AdCarousel />
       {isLoading ? (
         <ProgressCircle tone="neutral" size="40" />
       ) : articles ? (
