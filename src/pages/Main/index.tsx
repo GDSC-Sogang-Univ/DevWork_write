@@ -4,6 +4,7 @@ import { ProductList } from "./components/ProductList";
 import { useArticles } from "@/hooks/useArticles";
 import { IconFaceSurprisedCircleLine } from "@karrotmarket/react-monochrome-icon";
 import { ProgressCircle } from "seed-design/ui/progress-circle";
+import FloatingWritingBtn from "@/components/Button/FloatingWritingBtn";
 
 const Main = () => {
   const { data: articles, isLoading } = useArticles();
@@ -25,6 +26,7 @@ const Main = () => {
           목록을 얻어오는데 실패했어요..
         </div>
       )}
+      <FloatingWritingBtn />
     </AppScreen>
   );
 };
