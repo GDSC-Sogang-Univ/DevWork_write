@@ -17,7 +17,7 @@ export const ActionButton = React.forwardRef<
 >(({ loading = false, children, variant, ...otherProps }, ref) => {
   // brandSolid variant일 때 SOGANG-700 색상 적용
   const customStyle =
-    variant === "brandSolid" ? { backgroundColor: "#b11f15" } : {};
+    variant === "brandSolid" ? { backgroundColor: "#E84336" } : {};
 
   return (
     <SeedActionButton
