@@ -66,16 +66,18 @@ export const Carousel: React.FC<CarouselProps> = ({ className }) => {
         }}
         pagination={{
           clickable: true,
-          bulletActiveColor: "#b11f15", // sogang-700
           bulletClass: "swiper-pagination-bullet",
         }}
-        navigation={true}
+        navigation={false}
         modules={[Pagination, Navigation, Autoplay]}
         className="carousel-swiper"
         style={
           {
-            "--swiper-navigation-color": "#b11f15",
-            "--swiper-pagination-color": "#b11f15",
+            "--swiper-pagination-color": "var(--color-sogang-gray-light)",
+            // 선택되지 않은 페이지네이션 컬러 지정
+            "--swiper-pagination-bullet-inactive-color":
+              "var(--color-sogang-gray-light)",
+            "--swiper-pagination-bullet-inactive-opacity": "0.3",
           } as React.CSSProperties
         }
       >
