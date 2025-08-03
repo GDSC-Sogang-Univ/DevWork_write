@@ -1,0 +1,41 @@
+/* CategoryList 커스텀 스타일 */
+
+/* 활성화된 칩의 배경색 변경 */
+.category-tabs-root [data-state="checked"] {
+  background-color: #b11f15 !important; /* sogang-700 */
+  color: white !important;
+  border-color: #b11f15 !important;
+}
+
+/* 비활성화된 칩의 스타일 */
+.category-tabs-root [data-state="unchecked"] {
+  background-color: transparent !important;
+  color: #6b7280 !important; /* gray-500 */
+  border-color: #e5e7eb !important; /* gray-200 */
+}
+
+/* 호버 효과 */
+.category-tabs-root [data-state="unchecked"]:hover {
+  background-color: #f3f4f6 !important; /* gray-100 */
+  color: #374151 !important; /* gray-700 */
+}
+
+/* 포커스 효과 */
+.category-tabs-root [data-state="unchecked"]:focus-visible {
+  outline: 2px solid #b11f15 !important;
+  outline-offset: 2px;
+}
+
+/* 칩 간격 조정 */
+.category-tabs-list {
+  gap: 8px;
+}
+
+/* 칩 크기 조정 */
+.category-tabs-trigger {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
