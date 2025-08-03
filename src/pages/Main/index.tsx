@@ -10,6 +10,8 @@ import {
 import { ProgressCircle } from "seed-design/ui/progress-circle";
 import { useState, useMemo } from "react";
 import type { Article } from "@/types/article";
+import { FloatingActionButton } from "@/components/FloatingActionButton";
+import { useFlow } from "@stackflow/react/future";
 
 const Main = () => {
   const { data: articles, isLoading } = useArticles();
