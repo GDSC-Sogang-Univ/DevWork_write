@@ -40,7 +40,6 @@ const Header: React.FC<HeaderProps> = ({
   showBackButton,
   showSearch,
   showProfile,
-  showRegisterButton,
   onBack,
   customActions,
   className,
@@ -54,8 +53,7 @@ const Header: React.FC<HeaderProps> = ({
   const finalShowBackButton = showBackButton ?? config.showBackButton ?? false;
   const finalShowSearch = showSearch ?? config.showSearch ?? false;
   const finalShowProfile = showProfile ?? config.showProfile ?? false;
-  const finalShowRegisterButton =
-    showRegisterButton ?? config.showRegisterButton ?? false;
+  const finalShowRegisterButton = false;
 
   const handleBack = () => {
     if (onBack) {
